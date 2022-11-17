@@ -1,0 +1,165 @@
+
+@media only screen 
+and (min-device-width: 1300px) 
+and (max-device-width: 1700px)  {
+  form .get_started h4{
+    display: none;
+  }
+  .ph-mob{
+    display: none;
+  }
+  .mob-heading, h3{
+    display: none;
+  }
+
+}
+
+
+form{
+    width: 100%; 
+}
+/* border-right-width: thick;  */
+
+.card{
+  width: 25rem 
+}
+
+
+h3,h5,h6,h4,h1{
+    color:#6666ff;    
+}
+h3{
+  width: 100%;
+}
+
+.statement{
+  background-color: #b3e7ff;
+    border-style: solid ;
+    border-color: #80d4ff;
+    padding: 5px;
+}
+
+.btn1{
+  padding: 5px;
+  margin-top: 10px;
+  font-weight:bold; 
+  padding-right: 30px;
+  padding-left: 30px;
+  border-radius: 0%;
+}
+.btn2{  
+  padding: 5px;
+  margin-top: 10px;
+  font-weight:bold;
+  border-radius: 0%;
+  padding-right: 30px;
+  padding-left: 30px;
+}
+
+.subheading h6{
+  display: block;
+  background-color: blue;
+  width: fit-content;
+  color: white;
+}
+.card{
+  background: rgb(230, 230, 230);
+  border-radius: 0%;
+  padding-left: 40px;
+  
+}
+
+/* .get_started,h3{
+  display: none;
+  } */
+
+input {
+  background-color: #f1f1f1;     
+} 
+/* Tab */
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+.form-group{
+  width: 100%;
+  
+}
+.card-body{
+  display: flex;
+  width: 100%;
+  padding-left: 10px;
+  
+}
+.card{
+  width: 66.7%;
+}
+.subheading{
+  padding-left:50px;
+}
+/* .underline, hr{
+  display:none
+} */
+
+form .get_started, h3{
+  display: none;
+}
+.ph-mob{
+  display: none;
+}
+.mob-heading, h3{
+  display: none;
+}
+
+
+  }
+
+/* Mobile */
+
+@media only screen and (max-device-width: 375px)
+and (max-device-width: 812px)  {
+  /* For mobile phones: */
+  form{
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+
+  .statement,.btn1,.btn2, .text-center, .form-check,
+  h3,h5{
+    display: none;
+  }
+  /* hr{
+    display: none;
+  } */
+  #inputaddress2,#inputAddress1,#zipcode,#name,#id,#zipcode,#address{
+    display: none;
+  }
+  .hide{
+    display: none;
+   }
+   
+ .email1hide{
+  display: none;
+ }
+ .req{
+  padding-left: 185px;
+ }
+ .text-justify,h4{
+  display: none;
+ }
+
+ /* .head,h6{
+  padding-left: 10px;
+ } */
+ .card-title,h6{
+  margin-left: 10px;
+ } 
+ .offer{
+  padding-left: 30px;
+ }
+ .mob-heading,h1{
+  padding-left: 20px;
+ } 
+}

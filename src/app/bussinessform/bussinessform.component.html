@@ -1,0 +1,621 @@
+<div class="row no-gutters">
+  <div class="card">
+    <div class="card-body">
+      <div class="head">
+        <h6 class="card-title"><p>LoremIpsum</p></h6>
+      </div>
+      <div class="underline"><hr /></div>
+
+      <div class="mob-heading">
+        <h1>Apply in minutes. Get a decision in seconds.</h1>
+      </div>
+
+      <div class="subheading">
+        <div class="offer">
+          <h6 (click)="toggleTag()">
+            <b>SPECIAL OFFER FOR YOU</b>&nbsp;&nbsp;<i
+              class="fa fa-caret-down"
+            ></i>
+          </h6>
+        </div>
+
+        <p class="card-text" *ngIf="showMe">
+          Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry. Lorem Ipsum has been the industry's standard dummy text ever
+          since the 1500s, when an unknown printer took a galley of type and
+          scrambled it to make a type specimen book. It has survived not only
+          five centuries, but also the leap into electronic typesetting,
+          remaining essentially unchanged. It was popularised in the 1960s with
+          the release of Letraset sheets containing Lorem Ipsum passages, and
+          more recently with desktop publishing software like Aldus PageMaker
+          including versions of Lorem Ipsum.
+        </p>
+        <hr />
+        <div class="cost"><p>$295 Annual Fee</p></div>
+      </div>
+    </div>
+  </div>
+
+  <div
+    class="col-12 col-sm-6 col-md-8 border"
+    style="border-right-width: thick"
+  >
+    <form [formGroup]="registerForm" #form="ngForm" (ngSubmit)="validate()">
+      <div class="text-justify">
+        <h4>Apply in minutes. Get a decision in seconds.</h4>
+      </div>
+      <div class="email1hide">
+        <div class="form-group">
+          <label for="Email_Address"
+            ><b>Email address*</b
+            ><i class="fa fa-info-circle" aria-hidden="true"></i
+          ></label>
+
+          <input
+            type="email"
+            class="form-control form-control-sm"
+            id="Email1"
+            aria-describedby="emailHelp"
+            placeholder="test@test.com"
+            formControlName="email"
+            required
+            minlength="1"
+            maxlength="250"
+            [class.is-invalid]="email.invalid && (email.dirty || email.touched)"
+          />
+          <div
+            *ngIf="email.invalid && (email.dirty || email.touched)"
+            class="invalid-feedback"
+          >
+            <div *ngIf="email.errors?.['required']">
+              This field is required.
+            </div>
+            <div *ngIf="email.errors?.['minlength']">
+              This field must have at least 1 character.
+            </div>
+            <div *ngIf="email.errors?.['maxlength']">
+              This field must have at most 250 characters.
+            </div>
+            <div
+              *ngIf="!email.errors?.['required'] && !email.errors?.['minlength'] && !email.errors?.['maxlength'] && email.errors?.['emailValidator']"
+            >
+              Invalid email format.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="get_started">
+        <h4>Let's get started</h4>
+      </div>
+
+      <h5>ENTER YOUR BUSINESS INFORMATION</h5>
+      <div class="form-row row">
+        <div class="form-group col-md-6">
+          <label for="legal_businessname"><b>LEGAL BUSINESS NAME*</b></label>
+
+          <input
+            type="text"
+            required
+            minlength="1"
+            maxlength="250"
+            formControlName="businessname"
+            class="form-control"
+            id="businessname"
+            placeholder="test"
+            [class.is-invalid]="
+              businessname.invalid &&
+              (businessname.dirty || businessname.touched)
+            "
+          />
+          <div
+            *ngIf="
+              businessname.invalid &&
+              (businessname.dirty || businessname.touched)
+            "
+            class="invalid-feedback"
+          >
+            <div *ngIf="businessname.errors?.['maxlength']">
+              This field must have at most 10 characters.
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group col-md-6">
+          <label for="businessname_oncard"
+            ><b>BUSINESS NAME ON CARD*</b
+            ><i class="fa fa-info-circle" aria-hidden="true"></i
+          ></label>
+
+          <input
+            class="form-control"
+            id="card_name"
+            type="text"
+            placeholder="TEST"
+            required
+            minlength="1"
+            maxlength="250"
+            formControlName="cardname"
+            [class.is-invalid]="
+              cardname.invalid && (cardname.dirty || cardname.touched)
+            "
+          />
+          <div
+            *ngIf="cardname.invalid && (cardname.dirty || cardname.touched)"
+            class="invalid-feedback"
+          >
+            <div *ngIf="cardname.errors?.['required']">
+              This field is required.
+            </div>
+            <div *ngIf="cardname.errors?.['minlength']">
+              This field must have at least 1 character.
+            </div>
+            <div *ngIf="cardname.errors?.['maxlength']">
+              This field must have at most 10 characters.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="businessaddressline1" id="inputAddress1"
+          ><b>BUSINESS ADDRESS LINE1*</b></label
+        >
+
+        <input
+          type="text"
+          class="form-control"
+          id="inputAddress1"
+          required
+          minlength="1"
+          maxlength="250"
+          formControlName="business_address1"
+          [class.is-invalid]="
+            business_address1.invalid &&
+            (business_address1.dirty || business_address1.touched)
+          "
+        />
+        <div
+          *ngIf="
+            business_address1.invalid &&
+            (business_address1.dirty || business_address1.touched)
+          "
+          class="invalid-feedback"
+        >
+          <div *ngIf="business_address1.errors?.['required']">
+            This field is required.
+          </div>
+          <div *ngIf="business_address1.errors?.['minlength']">
+            This field must have at least 1 character.
+          </div>
+          <div *ngIf="business_address1.errors?.['maxlength']">
+            This field must have at most 250 characters.
+          </div>
+        </div>
+      </div>
+      <div class="form-row row">
+        <div class="form-group col-md-6">
+          <label for="businessaddressline2" id="inputaddress2"
+            ><b>BUSINESS ADDRESS LINE2</b></label
+          >
+          <input
+            type="text"
+            class="form-control"
+            formControlName="business_address2"
+            id="inputaddress2"
+            [class.is-invalid]="
+              business_address2.invalid &&
+              (business_address2.dirty || business_address2.touched)
+            "
+          />
+          <div
+            *ngIf="
+              business_address2.invalid &&
+              (business_address2.dirty || business_address2.touched)
+            "
+            class="invalid-feedback"
+          ></div>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="businessaddress_zipcode" id="zipcode"
+            ><b>ZIP CODE*</b></label
+          >
+
+          <input
+            type="text"
+            class="form-control"
+            id="zipcode"
+            required
+            minlength="1"
+            maxlength="6"
+            formControlName="zip1"
+            [class.is-invalid]="zip1.invalid && (zip1.dirty || zip1.touched)"
+          />
+
+          <div
+            *ngIf="zip1.invalid && (zip1.dirty || zip1.touched)"
+            class="invalid-feedback"
+          >
+            <div *ngIf="zip1.errors?.['required']">This field is required.</div>
+            <div *ngIf="zip1.errors?.['minlength']">
+              This field must have at least 1 character.
+            </div>
+            <div *ngIf="zip1.errors?.['maxlength']">
+              This field must have at most 6 characters.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="business_ph_no"
+          ><b>BUSINESS PHONE NUMBER*</b
+          ><i class="fa fa-info-circle" aria-hidden="true"></i
+        ></label>
+
+        <input
+          type="number"
+          class="form-control"
+          id="ph_no"
+          placeholder="(__)__-__"
+          formControlName="phone"
+          required
+          minlength="1"
+          maxlength="10"
+          [class.is-invalid]="phone.invalid && (phone.dirty || phone.touched)"
+        />
+        <div
+          *ngIf="zip1.invalid && (phone.dirty || phone.touched)"
+          class="invalid-feedback"
+        >
+          <div *ngIf="phone.errors?.['required']">This field is required.</div>
+          <div *ngIf="phone.errors?.['minlength']">
+            This field must have at least 1 character.
+          </div>
+          <div *ngIf="phone.errors?.['maxlength']">
+            This field must have at most 10 characters.
+          </div>
+        </div>
+      </div>
+
+      <div class="ph-mob">
+        <label for="Email_Address"
+          ><b>Email address*</b
+          ><i class="fa fa-info-circle" aria-hidden="true"></i
+        ></label>
+
+        <input
+          type="email"
+          class="form-control form-control-sm"
+          id="Email1"
+          required
+          minlength="1"
+          maxlength="250"
+          aria-describedby="emailHelp"
+          placeholder="test@test.com"
+          formControlName="email"
+          [class.is-invalid]="email.invalid && (email.dirty || email.touched)"
+        />
+        <div
+          *ngIf="email.invalid && (email.dirty || email.touched)"
+          class="invalid-feedback"
+        >
+          <div *ngIf="email.errors?.['required']">This field is required.</div>
+          <div *ngIf="email.errors?.['minlength']">
+            This field must have at least 1 character.
+          </div>
+          <div *ngIf="email.errors?.['maxlength']">
+            This field must have at most 250 characters.
+          </div>
+          <div
+            *ngIf="!email.errors?.['required'] && !email.errors?.['minlength'] && !email.errors?.['maxlength'] && email.errors?.['emailValidator']"
+          >
+            Invalid email format.
+          </div>
+        </div>
+      </div>
+
+      <b><hr /></b>
+      <h5>ENTER YOUR PERSONAL INFORMATION</h5>
+      <div class="form-row row">
+        <div class="form-group col-md-5">
+          <label for="firstname" id="name"><b>FIRST NAME*</b></label>
+
+          <input
+            type="text"
+            class="form-control"
+            id="name"
+            required
+            minlength="1"
+            maxlength="250"
+            formControlName="firstname"
+            [class.is-invalid]="
+              firstname.invalid && (firstname.dirty || firstname.touched)
+            "
+          />
+          <div
+            *ngIf="firstname.invalid && (firstname.dirty || firstname.touched)"
+            class="invalid-feedback"
+          >
+            <div *ngIf="firstname.errors?.['required']">
+              This field is required.
+            </div>
+            <div *ngIf="firstname.errors?.['minlength']">
+              This field must have at least 1 character.
+            </div>
+            <div *ngIf="firstname.errors?.['maxlength']">
+              This field must have at most 250 characters.
+            </div>
+          </div>
+        </div>
+        <div class="form-group col-md-2">
+          <label for="MI" id="id"><b>M.I.</b></label>
+          <input
+            type="text"
+            class="form-control"
+            formControlName="MI"
+            id="id"
+            [class.is-invalid]="MI.invalid && (MI.dirty || MI.touched)"
+          />
+          <div
+            *ngIf="MI.invalid && (MI.dirty || MI.touched)"
+            class="invalid-feedback"
+          >
+            <div *ngIf="MI.errors?.['maxlength']">
+              This field must have at most 10 characters.
+            </div>
+          </div>
+        </div>
+        <div class="form-group col-md-5">
+          <label for="lastname" id="name"><B>LAST NAME*</B></label>
+
+          <input
+            type="text"
+            class="form-control"
+            id="name"
+            formControlName="lastname"
+            [class.is-invalid]="
+              lastname.invalid && (lastname.dirty || lastname.touched)
+            "
+          />
+          <div
+            *ngIf="lastname.invalid && (lastname.dirty || lastname.touched)"
+            class="invalid-feedback"
+          >
+            <div *ngIf="lastname.errors?.['required']">
+              This field is required.
+            </div>
+            <div *ngIf="lastname.errors?.['minlength']">
+              This field must have at least 1 character.
+            </div>
+            <div *ngIf="lastname.errors?.['maxlength']">
+              This field must have at most 250 characters.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="nameoncard" id="name"
+          ><b>NAME ON CARD*</b
+          ><i class="fa fa-info-circle" aria-hidden="true"></i
+        ></label>
+
+        <input
+          type="text"
+          class="form-control"
+          id="name"
+          required
+          minlength="1"
+          maxlength="250"
+          formControlName="nameoncard"
+          [class.is-invalid]="
+            nameoncard.invalid && (nameoncard.dirty || nameoncard.touched)
+          "
+        />
+        <div
+          *ngIf="nameoncard.invalid && (nameoncard.dirty || nameoncard.touched)"
+          class="invalid-feedback"
+        >
+          <div *ngIf="nameoncard.errors?.['required']">
+            This field is required.
+          </div>
+          <div *ngIf="nameoncard.errors?.['minlength']">
+            This field must have at least 1 character.
+          </div>
+          <div *ngIf="nameoncard.errors?.['maxlength']">
+            This field must have at most 250 characters.
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            id="gridCheck"
+            click="mark()"
+          />
+          <label class="form-check-label" for="gridCheck">
+            <b>My home addrss is the same as my business address</b>
+          </label>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="homeaddressline1" id="address"
+          ><b>HOME ADDRESS LINE 1*</b></label
+        >
+
+        <input
+          type="text"
+          class="form-control"
+          id="address"
+          required
+          minlength="1"
+          maxlength="250"
+          formControlName="homeaddress"
+          [class.is-invalid]="
+            homeaddress.invalid && (homeaddress.dirty || homeaddress.touched)
+          "
+        />
+      </div>
+
+      <div
+        *ngIf="
+          homeaddress.invalid && (homeaddress.dirty || homeaddress.touched)
+        "
+        class="invalid-feedback"
+      >
+        <div *ngIf="homeaddress.errors?.['required']">
+          This field is required.
+        </div>
+        <div *ngIf="homeaddress.errors?.['minlength']">
+          This field must have at least 1 character.
+        </div>
+        <div *ngIf="homeaddress.errors?.['maxlength']">
+          This field must have at most 250 characters.
+        </div>
+      </div>
+      <div class="form-row row">
+        <div class="form-group col-md-6">
+          <label for="homeaddressline2" id="address"
+            ><b>HOME ADDRESS LINE 2</b></label
+          >
+          <input
+            type="text"
+            class="form-control"
+            id="address"
+            formControlName="homeaddressline2"
+            [class.is-invalid]="
+              homeaddressline2.invalid &&
+              (homeaddressline2.dirty || homeaddressline2.touched)
+            "
+          />
+          <div
+            *ngIf="
+              homeaddressline2.invalid &&
+              (homeaddressline2.dirty || homeaddressline2.touched)
+            "
+            class="invalid-feedback"
+          ></div>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="homeaddresszipcode" id="zipcode"><b>ZIP CODE*</b></label>
+
+          <input
+            type="text"
+            class="form-control"
+            id="zipcode"
+            required
+            minlength="1"
+            maxlength="6"
+            formControlName="zip"
+            [class.is-invalid]="zip.invalid && (zip.dirty || zip.touched)"
+          />
+
+          <div
+            *ngIf="zip.invalid && (zip.dirty || zip.touched)"
+            class="invalid-feedback"
+          >
+            <div *ngIf="zip.errors?.['required']">This field is required.</div>
+            <div *ngIf="zip.errors?.['minlength']">
+              This field must have at least 1 character.
+            </div>
+            <div *ngIf="zip.errors?.['maxlength']">
+              This field must have at most 6 characters.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <b><hr /></b>
+
+      <h5>TELL US WHERE TO SEND YOUR BILL</h5>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="radio"
+          formControlName="radioExample"
+          id="flexRadioDefault1"
+          value="Business"
+        />
+        <label class="form-check-label" for="flexRadioDefault1">
+          Business
+        </label>
+      </div>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="radio"
+          formControlName="radioExample"
+          id="flexRadioDefault1"
+          value="Home"
+        />
+        <label class="form-check-label" for="flexRadioDefault1"> Home </label>
+      </div>
+      <!-- <div>{{ radioExample.value }}</div> -->
+      <div>{{ registerForm.value.radioExample }}</div>
+      <div class="req"><p>*Required information</p></div>
+
+      <h6 class="text-center">TERMS AND CONDITIONS</h6>
+      <b><hr /></b>
+      <p class="text-center fw-bold">
+        PLEASE SCROLL DOWN TO READ IMPORTANT INFORMATION ABOUT RATES, FEES,AND
+        OTHER COST INFORMATION BEFORE SUBMITTING YOUR INFORMATION.
+      </p>
+
+      <div class="statement">
+        By submitting this application, I certify that I have read, met, and
+        agreed to all of terms, conditions, and disclosures as outlined below,
+        which contain fee and other important cost information. I certify that I
+        am an Authorizing Officer of the company, and have provided current,
+        complete and accurate information. I understand that additional
+        information may be required to complete my application.
+      </div>
+      <div class="text-center">
+        <button class="btn btn-primary btn1" (click)="addingData()">
+          Submit Application
+        </button>
+      </div>
+
+      <div class="text-center">
+        <button type="button" class="btn btn-outline-primary btn2">
+          Save & Apply Later
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- <div class="form-check">
+  <input
+    class="form-check-input"
+    type="checkbox"
+    id="gridCheck"
+    onclick="mark()"
+  />
+  <label class="form-check-label" for="gridCheck">
+    <b>My home addrss is the same as my business address</b>
+  </label>
+</div> -->
+<!-- <script>
+  let flag = true;
+  function mark() {
+    flag = !flag;
+    move();
+    console.log("hii");
+  }
+  function move() {
+    if (!flag) {
+      document.getElementById("inputAddress1").value =
+        document.getElementById("address").value;
+      document.getElementById("inputaddress2").value =
+        document.getElementById("address").value;
+      document.getElementById("zipcode").value =
+        document.getElementById("zipcode").value;
+    } else {
+      document.getElementById("inputAddress1").value = "";
+      document.getElementById("inputaddress2").value = "";
+      document.getElementById("zipcode").value = "";
+    }
+  }
+</script> -->
